@@ -1,5 +1,3 @@
-## Simple CTE
-
 -- A query finding the average amount paid by the top 5 customers using a CTE
 
 WITH average_cte (customer_id, first_name, last_name, city, country, sum_amount)
@@ -21,9 +19,10 @@ LIMIT 5)
 SELECT AVG(sum_amount) AS average_amount_paid
 FROM average_cte
 
-## Complex CTE
 
--- Find out how many of the top 5 customers are based within each country.
+
+-- Determine how many of the top 5 customers are in each country
+
 WITH cte_top_5_customers (customer_id, first_name, last_name, city, country, sum_amount)
 AS
 (SELECT A.customer_id,

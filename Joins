@@ -1,0 +1,48 @@
+-- What were Rockbuster's top grossing movies?
+
+SELECT SUM(amount),
+	D.title
+FROM payment A
+INNER JOIN rental B on A.rental_id = B.rental_id
+INNER JOIN inventory C on B.inventory_id = C.inventory_id
+INNER JOIN film D on C.film_id = D.film_id
+GROUP BY D.title
+ORDER BY SUM(amount) DESC
+LIMIT 10
+
+Output:
+215.75	"Telegraph Voyage"
+199.72	"Zorro Ark"
+198.73	"Wife Turn"
+191.74	"Innocent Usual"
+190.78	"Hustler Party"
+190.74	"Saturday Lambs"
+186.73	"Titans Jerk"
+177.73	"Harry Idaho"
+169.76	"Torque Bound"
+168.72	"Dogma Family"
+
+
+-- Bottom grossing movies?
+
+SELECT SUM(amount),
+	D.title
+FROM payment A
+INNER JOIN rental B on A.rental_id = B.rental_id
+INNER JOIN inventory C on B.inventory_id = C.inventory_id
+INNER JOIN film D on C.film_id = D.film_id
+GROUP BY D.title
+ORDER BY SUM(amount) ASC
+LIMIT 10
+
+Output:
+5.94	"Texas Watch"
+5.94	"Oklahoma Jumanji"
+5.94	"Duffel Apocalypse"
+5.95	"Freedom Cleopatra"
+6.93	"Young Language"
+6.93	"Rebel Airport"
+6.94	"Cruelty Unforgiven"
+6.94	"Treatment Jekyll"
+7.93	"Lights Deer"
+7.94	"Stallion Sundance"

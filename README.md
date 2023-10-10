@@ -27,7 +27,7 @@ The data set contained various tables, with relations outlined in the entity rel
 13.	Country
 
 ## Tools
-PostGreSQL was used as the relational database management system. 
+PostGreSQL was used as the relational database management system. Tableau Public was used to generate visualizations.
 
 ## Visualizations
 All visualizations for this analysis can be seen in Tableau Public [via this link](https://public.tableau.com/app/profile/celine.terfloth/viz/3_10RockbusterAnalysis/Sheet6).
